@@ -1,32 +1,52 @@
 // The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
-
 /**
+ * This method is called when your extension is activated
+ *
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
-    // Use the console to output diagnostic information (console.log) and errors (console.error)
-    // This line of code will only be executed once when your extension is activated
     console.log('Congratulations, your extension "tomcathelper" is now active!');
 
     // The command has been defined in the package.json file
-    // Now provide the implementation of the command with  registerCommand
-    // The commandId parameter must match the command field in package.json
-    let disposable = vscode.commands.registerCommand('tomcathelper.helloWorld', function () {
-        // The code you place here will be executed every time your command is executed
+    // Now provide the implementation of the command with registerCommand
 
-        // Display a message box to the user
-        vscode.window.showInformationMessage('Hello World from tomcathelper!');
+    //   "onCommand:tomcathelper.helloWorld",
+    let commandGreeting = vscode.commands.registerCommand('tomcathelper.helloWorld', function () {
+        vscode.window.showInformationMessage('Tomcat Helper - Greeting!');
     });
+    context.subscriptions.push(commandGreeting);
 
-    context.subscriptions.push(disposable);
+    let commandNewServer = vscode.commands.registerCommand('tomcathelper.newServer', function () {
+        vscode.window.showInformationMessage('Tomcat Helper - new Server!');
+    });
+    context.subscriptions.push(commandNewServer);
+
+    let commandRenameServer = vscode.commands.registerCommand('tomcathelper.renameServer', function () {
+        vscode.window.showInformationMessage('Tomcat Helper - renaming Server!');
+    });
+    context.subscriptions.push(commandRenameServer);
+
+    let commandDeleteServer = vscode.commands.registerCommand('tomcathelper.deleteServer', function () {
+        vscode.window.showInformationMessage('Tomcat Helper - deleting Server!');
+    });
+    context.subscriptions.push(commandDeleteServer);
+
+    let commandStartServer = vscode.commands.registerCommand('tomcathelper.startServer', function () {
+        vscode.window.showInformationMessage('Tomcat Helper - starting Server!');
+    });
+    context.subscriptions.push(commandStartServer);
+
+    let commandStopServer = vscode.commands.registerCommand('tomcathelper.stopServer', function () {
+        vscode.window.showInformationMessage('Tomcat Helper - stopping Server!');
+    });
+    context.subscriptions.push(commandStopServer);
 }
 
-// this method is called when your extension is deactivated
+/**
+ * This method is called when your extension is deactivated
+ */
 function deactivate() {}
 
 module.exports = {

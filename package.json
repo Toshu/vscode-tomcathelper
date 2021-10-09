@@ -72,15 +72,40 @@
     "categories": [
         "Other"
     ],
-    "activationEvents": [
-        "onCommand:tomcathelper.helloWorld"
-    ],
     "main": "./extension.js",
+    "activationEvents": [
+        "onCommand:tomcathelper.helloWorld",
+        "onCommand:tomcathelper.newServer",
+        "onCommand:tomcathelper.renameServer",
+        "onCommand:tomcathelper.deleteServer",
+        "onCommand:tomcathelper.startServer",
+        "onCommand:tomcathelper.stopServer"
+    ],
     "contributes": {
         "commands": [
             {
                 "command": "tomcathelper.helloWorld",
-                "title": "Hello World"
+                "title": "Tomcat Helper - Greeting"
+            },
+            {
+                "command": "tomcathelper.newServer",
+                "title": "Tomcat Helper - new Server"
+            },
+            {
+                "command": "tomcathelper.renameServer",
+                "title": "Tomcat Helper - rename Server"
+            },
+            {
+                "command": "tomcathelper.deleteServer",
+                "title": "Tomcat Helper - delete Server"
+            },
+            {
+                "command": "tomcathelper.startServer",
+                "title": "Tomcat Helper - start Server"
+            },
+            {
+                "command": "tomcathelper.stopServer",
+                "title": "Tomcat Helper - stop Server"
             }
         ]
     }
